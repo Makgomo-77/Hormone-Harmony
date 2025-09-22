@@ -1,1 +1,546 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hormone Harmony - Thyroid & Hormonal Balance Resource</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #8a6bc9;
+            --secondary: #ff9cc0;
+            --accent: #5ac8c8;
+            --light: #f9f5ff;
+            --dark: #2d2b55;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            background-color: var(--light);
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            color: var(--dark);
+        }
+        
+        .navbar {
+            background-color: white;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+        
+        .btn-primary:hover {
+            background-color: #7654b3;
+            border-color: #7654b3;
+        }
+        
+        .btn-outline-primary {
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, rgba(138, 107, 201, 0.1) 0%, rgba(255, 156, 192, 0.1) 100%);
+            padding: 100px 0;
+        }
+        
+        .feature-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-radius: 12px;
+            overflow: hidden;
+            height: 100%;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .ethnicity-selector .ethnicity-btn {
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+        
+        .ethnicity-selector .ethnicity-btn.active, 
+        .ethnicity-selector .ethnicity-btn:hover {
+            border-color: var(--primary);
+            transform: scale(1.05);
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 40px;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--secondary);
+            margin: 15px auto 0;
+        }
+        
+        .resource-category {
+            border-left: 4px solid var(--primary);
+            padding-left: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .progress-bar {
+            background-color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-spa me-2 text-primary"></i>
+                <span class="fw-bold">Hormone Harmony</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#resources">Resources</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#ethnicity">Ethnicity Guide</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#community">Community</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                </ul>
+                <button class="btn btn-primary ms-3" data-bs-toggle="modal" data-bs-target="#signupModal">Sign Up</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">Balancing Your Hormones, Nourishing Your Life</h1>
+                    <p class="lead mb-4">Personalized diet, workout, and treatment guidance for women with thyroid and hormonal imbalances across all ethnicities.</p>
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#assessmentModal">Take Assessment</button>
+                        <button class="btn btn-outline-primary">Learn More</button>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Healthy food for hormone balance" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resource Categories -->
+    <section class="py-5" id="resources">
+        <div class="container py-5">
+            <h2 class="text-center section-title">Holistic Approach to Hormonal Health</h2>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card feature-card h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="icon-wrapper bg-light rounded-circle p-3 mb-3 mx-auto" style="width: 70px; height: 70px;">
+                                <i class="fas fa-utensils fa-2x text-primary"></i>
+                            </div>
+                            <h4 class="card-title">Diet & Nutrition</h4>
+                            <p class="card-text">Personalized meal plans and nutritional guidance tailored to your specific hormonal needs.</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary mt-2">Explore</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <div class="card feature-card h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="icon-wrapper bg-light rounded-circle p-3 mb-3 mx-auto" style="width: 70px; height: 70px;">
+                                <i class="fas fa-running fa-2x text-primary"></i>
+                            </div>
+                            <h4 class="card-title">Workout Plans</h4>
+                            <p class="card-text">Exercise routines designed to support hormonal balance without causing additional stress.</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary mt-2">Explore</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <div class="card feature-card h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="icon-wrapper bg-light rounded-circle p-3 mb-3 mx-auto" style="width: 70px; height: 70px;">
+                                <i class="fas fa-leaf fa-2x text-primary"></i>
+                            </div>
+                            <h4 class="card-title">Home Remedies</h4>
+                            <p class="card-text">Natural approaches and lifestyle adjustments to support your hormonal health journey.</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary mt-2">Explore</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <div class="card feature-card h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="icon-wrapper bg-light rounded-circle p-3 mb-3 mx-auto" style="width: 70px; height: 70px;">
+                                <i class="fas fa-hand-holding-heart fa-2x text-primary"></i>
+                            </div>
+                            <h4 class="card-title">Treatment Options</h4>
+                            <p class="card-text">Medical and alternative treatment information to help you make informed decisions.</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary mt-2">Explore</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ethnicity Guide -->
+    <section class="py-5 bg-white" id="ethnicity">
+        <div class="container py-5">
+            <h2 class="text-center section-title">Cultural & Ethnic Considerations</h2>
+            <p class="text-center mb-5">Hormonal health approaches can vary based on genetic factors, dietary traditions, and cultural practices.</p>
+            
+            <div class="ethnicity-selector mb-5">
+                <div class="d-flex flex-wrap justify-content-center gap-3">
+                    <button class="btn ethnicty-btn btn-outline-primary rounded-pill ethnicity-btn active" data-ethnicity="all">All Ethnicities</button>
+                    <button class="btn ethnicty-btn btn-outline-primary rounded-pill ethnicity-btn" data-ethnicity="east-asian">East Asian</button>
+                    <button class="btn ethnicty-btn btn-outline-primary rounded-pill ethnicity-btn" data-ethnicity="south-asian">South Asian</button>
+                    <button class="btn ethnicty-btn btn-outline-primary rounded-pill ethnicity-btn" data-ethnicity="african">African</button>
+                    <button class="btn ethnicty-btn btn-outline-primary rounded-pill ethnicity-btn" data-ethnicity="european">European</button>
+                    <button class="btn ethnicty-btn btn-outline-primary rounded-pill ethnicity-btn" data-ethnicity="latin-american">Latin American</button>
+                    <button class="btn ethnicty-btn btn-outline-primary rounded-pill ethnicity-btn" data-ethnicity="middle-eastern">Middle Eastern</button>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="resource-category">
+                        <h4><i class="fas fa-utensils me-2 text-primary"></i> Dietary Considerations</h4>
+                        <p>Traditional foods and dietary patterns that support thyroid health within different cultural contexts.</p>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Iodine-rich traditional foods</li>
+                            <li class="list-group-item">Goitrogens in cultural diets</li>
+                            <li class="list-group-item">Cultural fasting practices</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="resource-category">
+                        <h4><i class="fas fa-clipboard-list me-2 text-primary"></i> Treatment Approaches</h4>
+                        <p>How different cultures approach thyroid and hormonal treatment, including traditional remedies.</p>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Traditional medicine integration</li>
+                            <li class="list-group-item">Cultural healthcare beliefs</li>
+                            <li class="list-group-item">Access to treatment variations</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="alert alert-info mt-5">
+                <div class="d-flex">
+                    <div class="me-3">
+                        <i class="fas fa-info-circle fa-2x"></i>
+                    </div>
+                    <div>
+                        <h5>Important Note</h5>
+                        <p class="mb-0">While ethnicity can influence hormonal health, individual variations are significant. Always consult with healthcare providers for personalized medical advice.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Testimonials -->
+    <section class="py-5" id="community">
+        <div class="container py-5">
+            <h2 class="text-center section-title">Community Stories</h2>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="testimonial-card h-100">
+                        <div class="d-flex mb-3">
+                            <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Maria" class="rounded-circle me-3" width="60" height="60">
+                            <div>
+                                <h5 class="mb-0">Maria L.</h5>
+                                <small class="text-muted">Latin American, Hypothyroidism</small>
+                            </div>
+                        </div>
+                        <p class="mb-0">"Learning about traditional Latin foods that support thyroid health changed everything for me. I can enjoy my cultural dishes while managing my condition."</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="testimonial-card h-100">
+                        <div class="d-flex mb-3">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Priya" class="rounded-circle me-3" width="60" height="60">
+                            <div>
+                                <h5 class="mb-0">Priya S.</h5>
+                                <small class="text-muted">South Asian, PCOS</small>
+                            </div>
+                        </div>
+                        <p class="mb-0">"The South Asian-specific meal plans helped me incorporate familiar spices and ingredients that actually help with insulin resistance associated with my PCOS."</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="testimonial-card h-100">
+                        <div class="d-flex mb-3">
+                            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Aisha" class="rounded-circle me-3" width="60" height="60">
+                            <div>
+                                <h5 class="mb-0">Aisha B.</h5>
+                                <small class="text-muted">Middle Eastern, Hashimoto's</small>
+                            </div>
+                        </div>
+                        <p class="mb-0">"Finding modifications for traditional Middle Eastern dishes that are autoimmune-protocol friendly made my transition to an anti-inflammatory diet so much easier."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Progress Tracker -->
+    <section class="py-5 bg-white">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="section-title">Track Your Hormonal Health Journey</h2>
+                    <p>Monitor symptoms, energy levels, and progress with our easy-to-use tracking tools designed specifically for hormonal imbalances.</p>
+                    
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i> Symptom tracking</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i> Diet and nutrition logging</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i> Menstrual cycle monitoring</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i> Medication and supplement tracker</li>
+                    </ul>
+                    
+                    <button class="btn btn-primary mt-3">Start Tracking</button>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">This Week's Progress</h5>
+                            
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>Energy Levels</span>
+                                    <span>75%</span>
+                                </div>
+                                <div class="progress" style="height: 8px;">
+                                    <div class="progress-bar" role="progressbar" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>Symptom Management</span>
+                                    <span>60%</span>
+                                </div>
+                                <div class="progress" style="height: 8px;">
+                                    <div class="progress-bar" role="progressbar" style="width: 60%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>Diet Adherence</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="progress" style="height: 8px;">
+                                    <div class="progress-bar" role="progressbar" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>Exercise Consistency</span>
+                                    <span>70%</span>
+                                </div>
+                                <div class="progress" style="height: 8px;">
+                                    <div class="progress-bar" role="progressbar" style="width: 70%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5 class="mb-4"><i class="fas fa-spa me-2"></i> Hormone Harmony</h5>
+                    <p>Empowering women with thyroid and hormonal imbalances through culturally-sensitive, personalized health resources.</p>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h5 class="mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Resources</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Ethnicity Guide</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Community</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 mb-4 mb-md-0">
+                    <h5 class="mb-4">Resources</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Diet & Nutrition</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Workout Plans</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Home Remedies</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Treatment Options</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="mb-4">Stay Connected</h5>
+                    <div class="d-flex gap-3 mb-4">
+                        <a href="#" class="text-white"><i class="fab fa-facebook-f fa-lg"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-pinterest-p fa-lg"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-youtube fa-lg"></i></a>
+                    </div>
+                    
+                    <div class="input-group">
+                        <input type="email" class="form-control" placeholder="Your email">
+                        <button class="btn btn-primary">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="my-5 bg-light">
+            
+            <div class="text-center">
+                <p class="mb-0">&copy; 2023 Hormone Harmony. All rights reserved.</p>
+                <p class="mb-0"><small>Disclaimer: This website provides educational information only. Consult healthcare professionals for medical advice.</small></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sign Up Modal -->
+    <div class="modal fade" id="signupModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Create Your Account</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Primary Health Concern</label>
+                            <select class="form-select">
+                                <option selected>Select condition</option>
+                                <option value="hypothyroidism">Hypothyroidism</option>
+                                <option value="hyperthyroidism">Hyperthyroidism</option>
+                                <option value="pcos">PCOS</option>
+                                <option value="adrenal">Adrenal Fatigue</option>
+                                <option value="menopause">Menopause</option>
+                                <option value="other">Other Hormonal Issue</option>
+                            </select>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="terms">
+                            <label class="form-check-label" for="terms">I agree to the Terms & Conditions</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Ethnicity selector functionality
+            const ethnicityButtons = document.querySelectorAll('.ethnicity-btn');
+            
+            ethnicityButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    ethnicityButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const ethnicity = this.getAttribute('data-ethnicity');
+                    // In a real application, this would filter resources
+                    console.log(`Selected ethnicity: ${ethnicity}`);
+                });
+            });
+            
+            // Simple symptom tracker progress (demo only)
+            const progressBars = document.querySelectorAll('.progress-bar');
+            
+            progressBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0';
+                
+                setTimeout(() => {
+                    bar.style.transition = 'width 1s ease-in-out';
+                    bar.style.width = width;
+                }, 300);
+            });
+        });
+    </script>
+</body>
+</html>
